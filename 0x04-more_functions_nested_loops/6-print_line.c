@@ -2,6 +2,7 @@
 
 /**
  * print_line - print a straight line
+ *
  * @n: character count
  * Return: void
  */
