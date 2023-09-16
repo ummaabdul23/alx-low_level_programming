@@ -9,27 +9,18 @@
 
 void print_number(int n)
 {
-	int i = 0, j;
-
-	if (n == 0)
-	{
-		_putchar('0');
-	}
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	while (n > 0)
+	if (n / 10 == 0)
 	{
-		j = n % 10;
-		i = i * 10 + j;
-		n /= 10;
+		_putchar(n + '0');
 	}
-	while (i > 0)
+	else
 	{
-		j = i % 10;
-		_putchar(j + '0');
-		i /= 10;
+		print_number(n / 10);
+		_putchar(n % 10 + '0');
 	}
 }
