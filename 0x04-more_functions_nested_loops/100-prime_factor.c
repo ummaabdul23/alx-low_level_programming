@@ -1,10 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - entry point
- * largest_prime: function that prints the largest prime factor
+ * largest_prime - prints the largest prime factor
  * @n: number whose prime is to be gotten
- * Return: always 0
+ * Return: largest prime factor
  */
 
 long int largest_prime(long int n)
@@ -13,7 +12,7 @@ long int largest_prime(long int n)
 
 	while (prime <= n)
 	{
-		if(n % prime == 0)
+		if (n % prime == 0)
 		{
 			n /= prime;
 		}
@@ -23,8 +22,14 @@ long int largest_prime(long int n)
 		}
 	}
 	printf("%li\n", prime);
-	return prime;
+	return (prime);
 }
+
+/**
+ * main - entry point
+ *
+ * Return: always 0
+ */
 int main(void)
 {
 	largest_prime(612852475143);
