@@ -1,7 +1,11 @@
 #include "main.h"
 
 /**
- * _strpbrk - 
+ * _strpbrk - function locates the first occurrence of s in accept
+ * @s: first string parameter
+ * @accept: second string parameter
+ *
+ * Return: char
  */
 
 char *_strpbrk(char *s, char *accept)
