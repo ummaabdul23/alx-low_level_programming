@@ -43,7 +43,7 @@ char *_strstr(char *haystack, char *needle)
 				if (haystack[c] == needle[b])
 					a++;
 				c++;
-				b++; 
+				b++;
 			}
 		}
 		if (a == count)
