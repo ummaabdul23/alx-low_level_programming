@@ -21,30 +21,34 @@ char *_strstr(char *haystack, char *needle)
 	while (needle[count] != '\0')
 	{
 		count++;
-		}
-		while (haystack[i] != '\0')
+	}
+	while (haystack[i] != '\0')
+	{
+		i++;
+	}
+	if (count == 0)
+	{
+		return (haystack);
+	}
+	while (haystack[j] != '\0')
+	{
+		if (haystack[j] == needle[0])
 		{
-			i++;
+			p = &haystack[j];
+			c = j;
+			a = 0;
+			b = 0;
+			while (b < count)
+			{
+				if (haystack[c] == needle[b])
+					a++;
+				c++;
+				b++; 
 			}
-			if (count == 0)
-				return (haystack);
-				while (haystack[j] != '\0')
-				{
-					if (haystack[j] == needle[0])
-					{
-						p = &haystack[j];
-						c = j;
-						a = 0;
-					for (b = 0; b < count; b++)
-					{
-					if (haystack[c] == needle[b])
-						a++;
-						c++;
-						}
-						}
-					if (a == count)
-						return (p);
-						j++;
-						}
-						return ('\0');
-						}
+		}
+		if (a == count)
+			return (p);
+		j++;
+	}
+	return ('\0');
+}
