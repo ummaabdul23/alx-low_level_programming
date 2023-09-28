@@ -17,7 +17,7 @@ int is_prime_number(int n)
 }
 
 /**
-  * calc_prim - finds multiple of n
+  * calc_prime - finds multiple of n
   * @x: number parameter
   * @y: number parameter
   * Return: int value
