@@ -2,7 +2,8 @@
 int _square(int x, int y);
 
 /**
-  * _sqrt_recursion -  a function that returns the natural square root of a number
+  * _sqrt_recursion -  a function that returns the natural
+  * square root of a number
   * @n: number parameter
   *
   * Return: int value
@@ -14,8 +15,7 @@ int _sqrt_recursion(int n)
 		return (-1);
 	if (n == 0 || n == 1)
 		return (n);
-	else
-		return (_square(n, 2));
+	return (_square(n, 2));
 }
 
 /**
@@ -33,5 +33,5 @@ int _square(int x, int y)
 	if (y * y > x)
 		return (-1);
 	else
-		return (_square(y, x + 1));
+		return (_square(x, y + 1));
 }
