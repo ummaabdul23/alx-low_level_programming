@@ -2,12 +2,11 @@
 #include "dog.h"
 
 /**
-  * init_dog - initializes a dog data type
-  * @d: points to a dog
+  * new_dog - creates a new dog
   * @name: dog name
   * @age: dog age
   * @owner: dog owner
-  *
+  * Return: the data of a dog
   */
 
 dog_t *new_dog(char *name, float age, char *owner)
