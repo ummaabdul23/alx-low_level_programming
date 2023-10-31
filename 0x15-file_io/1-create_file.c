@@ -30,17 +30,17 @@ int create_file(const char *filename, char *text_content)
 	return (1);
 }
 /**
-  * _strlen - calculate the lenght of a string.
-  * @str: array of characters.
-  *
-  * Return: lenght of the string.
-  */
+ * _strlen - calculate the lenght of a string.
+ * @str: array of characters.
+ *
+ * Return: lenght of the string.
+ */
 int _strlen(char *str)
 {
 	int count = 0;
 
-         while (*str++)
-                 count++;
-         return (count);
+	while (*str++)
+		count++;
+	return (count);
 }
 
