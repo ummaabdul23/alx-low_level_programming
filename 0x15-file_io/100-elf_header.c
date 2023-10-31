@@ -5,6 +5,8 @@
 #include <elf.h>
 
 #define BUFF_SIZE 64
+int memcmp(const void *s1, const void *s2, size_t n);
+
 /**
  * display_error - display error message
  * @message: message to display
@@ -21,8 +23,10 @@ void display_error(const char *message)
  */
 void display_elf_header(const Elf64_Ehdr *elf_header)
 {
+	int i;
+
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x", elf_header->e_ident[i]);
 		if (i < EI_NIDENT - 1)
@@ -32,18 +36,16 @@ void display_elf_header(const Elf64_Ehdr *elf_header)
 	printf("  Class:                             %s\n",
 			elf_header->e_ident[EI_CLASS] == ELFCLASS64 ? "ELF64" : "ELF32");
 	printf("  Data:                              %s\n",
-			elf_header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement,
-			little endian" : "2's complement, big endian");
+			elf_header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
 	printf("  Version:                           %d (current)\n",
 			elf_header->e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            %s\n",
+	printf("  OS/ABI:                            %d\n",
 			elf_header->e_ident[EI_OSABI]);
 	printf("  ABI Version:                       %d\n",
 			elf_header->e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n",
 			elf_header->e_type == ET_EXEC ? "EXEC (Executable file)" :
-			(elf_header->e_type == ET_DYN ? "DYN (Shared object file)" :
-			 "REL (Relocatable file)"));
+			(elf_header->e_type == ET_DYN ? "DYN (Shared object file)" : "REL (Relocatable file)"));
 	printf("  Entry point address:               0x%lx\n",
 			(unsigned long)elf_header->e_entry);
 }
@@ -56,17 +58,17 @@ void display_elf_header(const Elf64_Ehdr *elf_header)
  */
 int main(int argc, char *argv[])
 {
+	int fd;
+	const char *filename = argv[1];
+	Elf64_Ehdr elf_header;
+
 	if (argc != 2)
 		display_error("Usage: elf_header elf_filename");
 
-	const char *filename = argv[1];
-	int fd = open(filename, O_RDONLY);
+	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
 		display_error("Error: Unable to open the file");
-
-	Elf64_Ehdr elf_header;
-
 	if (read(fd, &elf_header, sizeof(elf_header)) != sizeof(elf_header))
 	{
 		close(fd);

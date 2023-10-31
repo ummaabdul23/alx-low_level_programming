@@ -10,6 +10,7 @@
 
 #define BUF_SIZE 1024
 
+int memcmp(const void *s1, const void *s2, size_t n);
 int _putchar(char c);
 int _strlen(char *str);
 ssize_t read_textfile(const char *filename, size_t letters);
