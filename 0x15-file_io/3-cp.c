@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int inputFD, outputFD;
+	mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	ssize_t nBytes_read, nBytes_write;
 	char buffer[BUF_SIZE];
 
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 	if (inputFD == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 	return (98);
-	outputFD = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	outputFD = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, perm);
 	if (outputFD == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 	return (99);
