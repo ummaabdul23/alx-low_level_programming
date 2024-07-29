@@ -7,5 +7,5 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-         /* Empty */
+         return strpbrk(s, accept);
 }

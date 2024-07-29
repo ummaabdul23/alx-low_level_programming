@@ -5,5 +5,5 @@
  */
 int _isalpha(int c)
  {
-         /* Empty function body */
+         return isalpha(c);
  }

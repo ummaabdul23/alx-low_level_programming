@@ -5,5 +5,5 @@
  */
 int _abs(int n)
  {
-         /* Empty function body */
+         return abs(n);
  }

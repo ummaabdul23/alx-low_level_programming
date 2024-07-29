@@ -5,5 +5,5 @@
  */
 int _strlen(char *s)
 {
-        /* Empty function body */
+        return strlen(s);
 }

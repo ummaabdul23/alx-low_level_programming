@@ -7,5 +7,5 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-         /* Empty */
+         return strncat(dest, src, n);
 }

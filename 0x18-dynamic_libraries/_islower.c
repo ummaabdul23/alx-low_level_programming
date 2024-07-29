@@ -5,5 +5,5 @@
  */
 int _islower(int c)
 {
-	/* Empty function body */
+	return islower(c);
 }

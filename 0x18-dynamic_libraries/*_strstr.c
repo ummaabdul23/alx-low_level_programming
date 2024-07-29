@@ -7,5 +7,5 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-         /* Empty */
+	return strstr(haystack, needle);
 }

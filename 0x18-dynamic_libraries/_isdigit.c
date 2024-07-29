@@ -5,5 +5,5 @@
  */
 int _isdigit(int c)
  {
-         /* Empty function body */
+         return isdigit(c);
  }

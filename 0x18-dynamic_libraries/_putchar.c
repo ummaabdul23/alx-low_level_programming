@@ -5,6 +5,6 @@
  */
 int _putchar(char c)
 {
-    /* Empty function body */
+    return putchar(c);
 }
 

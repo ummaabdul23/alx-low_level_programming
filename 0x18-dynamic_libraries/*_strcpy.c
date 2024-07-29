@@ -6,5 +6,5 @@
  */
 char *_strcpy(char *dest, char *src);
 {
-        /* Empty function body */
+        return strcpy(dest, src);
 }

@@ -5,5 +5,5 @@
  */
 int _isupper(int c)
  {
-         /* Empty function body */
+         return isupper(c);
  }

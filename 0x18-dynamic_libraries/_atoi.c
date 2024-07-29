@@ -5,5 +5,5 @@
  */
 int _atoi(char *s)
 {
-         /* Empty function body */
+         return _atoi(s);
 }
